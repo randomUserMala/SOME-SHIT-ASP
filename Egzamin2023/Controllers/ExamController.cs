@@ -11,17 +11,19 @@ namespace Egzamin2023.Controllers
     public class ExamController : Controller
     {
         private readonly IDateProvider _dateProvider;
+        private readonly NoteService _noteService;
 
-        public ExamController(IDateProvider dateProvider)
+
+        public ExamController(IDateProvider dateProvider, NoteService noteService)
         {
             _dateProvider = dateProvider;
+            _noteService = noteService;
         }
 
         public IActionResult Index()
         {
             return View();
         }
-
 
         [HttpGet]
         public IActionResult Create() // pomieniamy "View() na Create(), tworzymy ścieżkę "Exam/Create.cshtml" w Views.
