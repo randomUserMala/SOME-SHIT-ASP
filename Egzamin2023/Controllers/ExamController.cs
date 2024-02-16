@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Egzamin2023.Models;
 using Egzamin2023.Services;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Egzamin2023.Controllers
 {
@@ -16,6 +15,11 @@ namespace Egzamin2023.Controllers
         public ExamController(IDateProvider dateProvider)
         {
             _dateProvider = dateProvider;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
         }
 
 
