@@ -6,6 +6,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
     <ItemGroup>
       <_ContentIncludedByDefault Remove="Views\Exam\Create.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Exam\Details.cshtml" />
