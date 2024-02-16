@@ -20,10 +20,7 @@ namespace Egzamin2023.Controllers
             _noteService = noteService;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public IActionResult Index() => View(_noteService.GetAll().Where(x => x.Deadline > _dateProvider.CurrentDate.AddHours(1)).ToList());
 
         [HttpGet]
         public IActionResult Create() // pomieniamy "View() na Create(), tworzymy ścieżkę "Exam/Create.cshtml" w Views.
@@ -38,10 +35,23 @@ namespace Egzamin2023.Controllers
                 ModelState.AddModelError("Deadline", "Czas ważności musi być o godzinę późniejszy od bieżącego czasu!");
 
             if (ModelState.IsValid)
+            {
+                _noteService.Add(note);
                 return RedirectToAction("Index");
+            }
 
 
             return View(note);
+        }
+
+        public IActionResult Details(string id)
+        {
+            var target = _noteService.GetById(id);
+
+            if (target is null)
+                return BadRequest();
+
+            return View(target);
         }
     }
 }

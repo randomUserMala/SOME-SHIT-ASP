@@ -92,7 +92,7 @@ public class Egzamin2023Test : IClassFixture<Egzamin2023TestFactory<Program>>
         //Valid note
         //Arrange
 
-        var result = await SendNote("ABCDEFGH", "ABCDEFGHJIKLMNOPRSDW", new DateTime(2024, 1, 2));
+        var result = await SendNote("ABCDEFGH", "ABCDEFGHJIKLMNOPRSDW", new DateTime(2024, 2, 2));
 
         //Act
 

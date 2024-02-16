@@ -1,0 +1,17 @@
+﻿@model Egzamin2023.Models.Note
+
+
+<h1>@Model.Title</h1>
+
+<div>
+    @{
+        var wiersze = @Model.Content.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+
+        foreach (string wiersz in wiersze)
+        {
+            <p>@wiersz</p>
+        }
+    }
+</div>
+
+<a asp-action="Index">Index</a>

@@ -3,7 +3,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IDateProvider, DefaultDateProvider>();
+builder.Services.AddScoped<IDateProvider, DefaultDateProvider>();
 builder.Services.AddSingleton<NoteService>();
 
 var app = builder.Build();
