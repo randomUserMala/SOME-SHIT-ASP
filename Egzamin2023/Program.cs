@@ -1,8 +1,10 @@
-
+using Egzamin2023.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IDateProvider, DefaultDateProvider>();
+
 
 var app = builder.Build();
 
