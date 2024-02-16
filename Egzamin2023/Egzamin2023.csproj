@@ -14,4 +14,10 @@
       <_ContentIncludedByDefault Remove="Views\Exam\Index.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="Views\Exam\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Views\Exam\" />
+    </ItemGroup>
 </Project>

@@ -1,0 +1,25 @@
+﻿@model Egzamin2023.Models.Note
+@* // Zadanie 1. stwórz widok Create, napisz prosty formularz.*@
+
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="Title"></label>
+        <input asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div>
+        <label asp-for="Content"></label>
+        <textarea asp-for="Content"> </textarea>
+        <span asp-validation-for="Content"></span>
+    </div>
+    <div>
+        <label asp-for="Deadline"></label>
+        <input asp-for="Deadline" />
+        <span asp-validation-for="Deadline"></span>
+    </div>
+    <div>
+        <button type="submit">Prześlij</button>
+    </div>
+</form>
+
+<a asp-action="Index">Index</a> @* nie wymagane *@
